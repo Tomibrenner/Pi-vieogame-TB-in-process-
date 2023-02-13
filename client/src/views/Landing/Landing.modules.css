@@ -1,0 +1,52 @@
+.MyImage{
+  background-image: url('../../img/360_F_442215355_AjiR6ogucq3vPzjFAAEfwbPXYGqYVAap.jpg');
+  border-radius: 5px;
+  background-size: 100%;
+  min-height: 592px;
+  max-width: 2000px;
+}
+
+.MyImage button {
+  font-family: 'Press Start 2P';
+  height: 60px;
+  width: 180px;
+  border-radius: 5px;
+  border: 3px solid blue;
+  background-color: purple;
+  background: linear-gradient(90deg,purple 10%, #fff 130%);
+}
+
+.myButton{
+    position: absolute;
+    left:45%;
+    top:10%;
+    animation: myAnim 1s ease 0s infinite normal forwards;
+}
+
+@keyframes myAnim {
+  0% {
+    animation-timing-function: ease-out;
+    transform: scale(1);
+    transform-origin: center center;
+  }
+
+  10% {
+    animation-timing-function: ease-in;
+    transform: scale(1.00);
+  }
+
+  20% {
+    animation-timing-function: ease-out;
+    transform: scale(1.00);
+  }
+
+  40% {
+    animation-timing-function: ease-in;
+    transform: scale(1.2);
+  }
+
+  50% {
+    animation-timing-function: ease-out;
+    transform: scale(1);
+  }
+}
