@@ -72,7 +72,7 @@ const Home = () => {
     e.preventDefault();
     dispatch(getAllVideogames());
     setTimeout(() => {
-      window.location.href = "http://localhost:3001/videogames";
+      window.location.href = "http://localhost:3000/videogames";
     }, 1000);
   };
 

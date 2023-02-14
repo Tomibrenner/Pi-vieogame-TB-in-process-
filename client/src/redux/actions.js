@@ -3,7 +3,6 @@ import {
   GET_VIDEOGAMES,
   GET_BY_NAME_VIDEOGAMES,
   GET_GENRES,
-  GET_PLATFORMS,
   GET_VIDEOGAME_DETAIL,
   CLEAN_DETAIL,
   FILTER_BY_GENRES,
@@ -79,18 +78,6 @@ export const getGenres = () => {
   };
 };
 
-
-export const getPlatforms = () => {
-  return async function (dispatch) {
-    try {
-      const apiData = await axios.get("http://localhost:3001/platforms");
-      const platforms = apiData.data;
-      dispatch( { type: GET_PLATFORMS, payload: platforms } );
-    } catch (error) {
-      console.log(error)
-    }
-  };
-};
 
 //* ------------------------------------------ FILTROS Y ORDENAMIENTO ------------------------------------------
 

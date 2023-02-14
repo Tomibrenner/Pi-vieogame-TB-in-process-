@@ -2,7 +2,6 @@ import {
   GET_VIDEOGAMES,
   GET_BY_NAME_VIDEOGAMES,
   GET_GENRES,
-  GET_PLATFORMS,
   GET_VIDEOGAME_DETAIL,
   CLEAN_DETAIL,
   FILTER_BY_GENRES,
@@ -17,7 +16,6 @@ const initialState = {
   all_videogames: [],
   genres: [],
   videogameDetail: {},
-  platforms: [],
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -53,11 +51,6 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         genres: action.payload,
-      };
-    case GET_PLATFORMS:
-      return {
-        ...state,
-        platforms: action.payload,
       };
     case FILTER_BY_GENRES:
       const allVideogames = state.all_videogames;
@@ -110,7 +103,7 @@ const rootReducer = (state = initialState, action) => {
     case ORDER_BY_RATING:
       let sortedRating =
         action.payload === "BestRated"
-          ? state.videogames?.sort(function (a, b) {
+          ? state.videogames.sort(function (a, b) {
               if (a.rating > b.rating) {
                 return 1;
               }
@@ -119,7 +112,7 @@ const rootReducer = (state = initialState, action) => {
               }
               return 0;
             })
-          : state.videogames?.sort(function (a, b) {
+          : state.videogames.sort(function (a, b) {
               if (a.rating > b.rating) {
                 return -1;
               }

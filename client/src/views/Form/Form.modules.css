@@ -1,0 +1,50 @@
+.videogameCard_main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 370px;
+    height: 450px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 25px;
+    border-radius: 10px;
+    background-color: rgba(148, 142, 142, 0.7);
+  }
+  
+  .videogameCard_main:hover {
+    background-color: rgba(73, 124, 114, 0.7);
+  }
+  
+  .videogameCard_main img {
+    margin-top: 15px;
+    border-radius: 10px;
+    width: 300px;
+  }
+  .videogameCard_main h3:link {
+   text-decoration: none;
+  }
+  
+  
+  .videogameCard_ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 40px;
+    padding-left: 20px;
+    padding-right: 30px;
+  }
+  
+  .videogameCard_ul li{
+    list-style: none;
+  }
+  
+  .loading {
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    margin: 30px 20px;
+    padding: 10px 40px;
+    border-radius: 10px;
+  } 
+  

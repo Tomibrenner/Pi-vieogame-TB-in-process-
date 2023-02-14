@@ -1,15 +1,16 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import {Link} from 'react-router-dom';
+import SearchBar from '../SearchBar/SearchBar';
 import './NavBar.modules.css'
 
-const NavBar = () =>{
-
-  return (
+const Nav = () => {
+  return(
     <div className='nav_main'>
-        <Link to='/videogames'>Home</Link>
-        <Link to='/creategame'>Create game</Link>
+    <Link to='/videogames'> <button>Home</button> </Link>
+    <SearchBar/>
+    <Link to='/creategame'><button>Create New Videogame</button>  </Link>
     </div>
   )
 }
 
-export default NavBar
+export default Nav;
