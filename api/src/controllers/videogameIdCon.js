@@ -15,6 +15,7 @@ const getUserById = async (id, source) => {
       rating: apiId.rating,
       platforms: apiId.platforms.map((el) => el.platform.name),
       genres: apiId.genres.map((el) => el.name),
+      background_image: apiId.background_image
     };
   } else {
     return await Videogame.findByPk(id);

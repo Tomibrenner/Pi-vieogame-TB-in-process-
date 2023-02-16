@@ -12,51 +12,66 @@ import {
   SET_VIDEOGAMES_TO_LOADING,
 } from "./const.js";
 
-export const getAllVideogames = () =>{
-  return function (dispatch){
-    axios
-    .get("http://localhost:3001/videogames")
-    .then((response) => {
-      return response.data;
-    })
-    .then((data) => dispatch({ type: GET_VIDEOGAMES, payload: data }))
-    .catch((error) => dispatch({ type: GET_VIDEOGAMES, payload: {error: error.message} }));
+export const getAllVideogames = () => {
+  return  function (dispatch) {
+     axios
+      .get("http://localhost:3001/videogames")
+      .then((response) => {
+        return response.data;
+      })
+      .then((data) => dispatch({ type: GET_VIDEOGAMES, payload: data }))
+      .catch((error) =>
+        dispatch({ type: GET_VIDEOGAMES, payload: { error: error.message } })
+      );
   };
 };
-export const getByNameVideogames = (name) =>{
-  return function (dispatch){
+export const getByNameVideogames = (name) => {
+  return  function (dispatch) {
     axios
-    .get(`http://localhost:3001/videogames?name=${name}`)
-    .then((response) => {
-      return response.data;
-    })
-    .then((data) => dispatch({ type: GET_BY_NAME_VIDEOGAMES, payload: data }))
-    .catch((error) => dispatch({ type: GET_BY_NAME_VIDEOGAMES, payload: {error: error.message} }));
+      .get(`http://localhost:3001/videogames?name=${name}`)
+      .then((response) => {
+        return response.data;
+      })
+      .then((data) => dispatch({ type: GET_BY_NAME_VIDEOGAMES, payload: data }))
+      .catch((error) =>
+        dispatch({
+          type: GET_BY_NAME_VIDEOGAMES,
+          payload: { error: 'Juego no encontrado' },
+        })
+      );
   };
 };
 
-export const setVideogamesToLoading = ()=>{
-  return async function (dispatch){
-   try {
-    return dispatch({
-      type: SET_VIDEOGAMES_TO_LOADING,
-      payload: {loading: true}
-    })
-   } catch (error) {
-    return dispatch({
-      type: SET_VIDEOGAMES_TO_LOADING,
-      payload: {error: error.message}
-    })
-   }
-  }
-}
+export const setVideogamesToLoading = () => {
+  return function (dispatch) {
+    try {
+      return dispatch({
+        type: SET_VIDEOGAMES_TO_LOADING,
+        payload: { loading: true },
+      });
+    } catch (error) {
+      return dispatch({
+        type: SET_VIDEOGAMES_TO_LOADING,
+        payload: { error: error.message },
+      });
+    }
+  };
+};
 
 export const getVideogameDetail = (id) => {
-  return function (dispatch) {
-    axios
+  return  function (dispatch) {
+     axios
       .get(`http://localhost:3001/videogame/${id}`)
-      .then((resp) => dispatch({ type: GET_VIDEOGAME_DETAIL, payload: resp.data }))
-      .catch((error) => console.log(error));
+      .then((response) => {
+        return response.data;
+      })
+      .then((data) => dispatch({ type: GET_VIDEOGAME_DETAIL, payload: data }))
+      .catch((error) =>
+        dispatch({
+          type: GET_VIDEOGAME_DETAIL,
+          payload: { error: error.message },
+        })
+      );
   };
 };
 
@@ -71,41 +86,42 @@ export const getGenres = () => {
     try {
       const apiData = await axios.get("http://localhost:3001/genres");
       const genres = apiData.data;
-      dispatch( { type: GET_GENRES, payload: genres} );
+      dispatch({ type: GET_GENRES, payload: genres });
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   };
 };
-
 
 //* ------------------------------------------ FILTROS Y ORDENAMIENTO ------------------------------------------
 
 export const filterVideogamesByGenres = (genreName) => {
   return {
-      type: FILTER_BY_GENRES,
-      payload: genreName
-    }
+    type: FILTER_BY_GENRES,
+    payload: genreName,
+  };
 };
 
-export const filterSource = (payload)=>{
+export const filterSource = (payload) => {
   return {
     type: FILTER_BY_SOURCE,
-    payload
-}};
+    payload,
+  };
+};
 
-export const orderByName = (payload)=>{
+export const orderByName = (payload) => {
   return {
     type: ORDER_BY_NAME,
-    payload
-}};
+    payload,
+  };
+};
 
-export const orderByRating = (payload)=>{
+export const orderByRating = (payload) => {
   return {
     type: ORDER_BY_RATING,
-    payload
-}};
-
+    payload,
+  };
+};
 
 // export const getUsers = () => {
 //   return async function (dispatch) {
@@ -118,6 +134,3 @@ export const orderByRating = (payload)=>{
 //     dispatch({type: GET_USERS, payload: users});
 //   };
 // };
-
-
-

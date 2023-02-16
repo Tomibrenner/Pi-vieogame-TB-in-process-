@@ -37,10 +37,10 @@ const rootReducer = (state = initialState, action) => {
         videogames: action.payload,
       };
     case GET_VIDEOGAME_DETAIL:
-      // console.log("videogameDetail", action.payload);
       return {
         ...state,
         videogameDetail: action.payload,
+        
       };
     case CLEAN_DETAIL:
       return {
@@ -67,8 +67,8 @@ const rootReducer = (state = initialState, action) => {
       const all_Videogames = state.all_videogames;
       const sourceFiltered =
         action.payload === "Created"
-          ? all_Videogames.filter((v) => v.createdInDb)
-          : all_Videogames.filter((v) => !v.createdInDb);
+          ? all_Videogames.filter((v) => v.created )
+          : all_Videogames.filter((v) => !v.created);
 
       return {
         ...state,
@@ -133,7 +133,7 @@ const rootReducer = (state = initialState, action) => {
 export default rootReducer;
 
 // const initialState = {
-//   users: [],
+//   users: [],loading
 // };
 
 // const rootReducer = (state = initialState, action) => {

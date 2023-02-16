@@ -12,6 +12,8 @@ import {
   filterSource,
   filterVideogamesByGenres,
 } from "../../redux/actions";
+import loading from "../../img/200w.gif";
+import "./Home.modules.css";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -140,7 +142,12 @@ const Home = () => {
           Reset filters
         </button>
         <div className="pages_container">
-          {games.loading && <h2>Loading...</h2>}
+          {games.loading && (
+            <div>
+              <h2>Loading...</h2>
+              <img src={loading} alt="" />
+            </div>
+          )}
           {games.error && <h2>{games.error}</h2>}
           {Array.isArray(games) && games.length > 0 ? (
             <Pagination
@@ -161,8 +168,9 @@ const Home = () => {
                   released={game.released}
                   rating={game.rating}
                   genres={game.genres}
+                  created={game.created}
+                  id={game.id}
                   key={game.id}
-                  id={game.key}
                 />
               );
             })}

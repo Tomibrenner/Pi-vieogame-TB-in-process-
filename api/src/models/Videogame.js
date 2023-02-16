@@ -34,7 +34,7 @@ module.exports = (sequelize) => {
       },
       platforms: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
       },
       background_image: {
         type: DataTypes.TEXT,

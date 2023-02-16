@@ -1,50 +1,88 @@
-.videogameCard_main {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 370px;
-    height: 450px;
-    margin-left: 20px;
-    margin-right: 20px;
-    margin-top: 25px;
-    border-radius: 10px;
-    background-color: rgba(148, 142, 142, 0.7);
-  }
-  
-  .videogameCard_main:hover {
-    background-color: rgba(73, 124, 114, 0.7);
-  }
-  
-  .videogameCard_main img {
-    margin-top: 15px;
-    border-radius: 10px;
-    width: 300px;
-  }
-  .videogameCard_main h3:link {
-   text-decoration: none;
-  }
-  
-  
-  .videogameCard_ul{
+.videogameCreate_Main {
+  background-color: #666666;
+  background-attachment: fixed;   
+  background-size: cover;
+  background-position: center center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  height: auto;
+  margin: 8px;
+  padding: 10px 100px;
+}
+
+
+.videogameCreate_Main h1{
+  color: antiquewhite;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 300px;
+  height: auto;
+  margin: 20px;
+  padding: 15px 45px;
+  border-radius: 10px;
+  background-color: rgba(7, 4, 4, 60%);
+  color: antiquewhite;
+  text-align: left;
+}
+.form:hover{
+  background-color: rgba(73, 124, 114, 0.7);
+}
+.form label {
+  padding-right: 18px;
+}
+
+.form input{
+  border-radius: 3px;
+  border-style: none;
+  cursor: pointer;
+}
+.form select {
+  border-radius: 3px;
+  border-style: none;
+  cursor: pointer;
+}
+
+.form textarea {
+  border-radius: 3px;
+  border-style: none;
+  cursor: pointer;
+}
+
+.selected_Delete {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding-right: 20px;
+  margin: 0;
+}
+
+ .buttonX {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    margin-top: 40px;
-    padding-left: 20px;
-    padding-right: 30px;
+    background-color: rgba(73, 124, 114, 0.7);
+    padding: 12px;
+    border-radius: 3px;
+    border-color: rgb(226, 223, 226);
+    border-style: none;
+    cursor: pointer;
+    
+    color: rgb(253, 251, 253);
+    font-weight: lighter;
+    font-size: 12px;
+    font-family: Arial;
+    text-decoration: none;
   }
   
-  .videogameCard_ul li{
-    list-style: none;
+  .buttonX:hover {
+    background-color: rgba(32, 24, 34, 0.7); 
+    box-shadow: 6px 5px 24px #666666;
+    transition-delay: 0.2s;
+    transition: 0.8s;
   }
-  
-  .loading {
-    display: flex;
-    flex-direction: column;
-    justify-content:center;
-    align-items: center;
-    margin: 30px 20px;
-    padding: 10px 40px;
-    border-radius: 10px;
-  } 
-  
